@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>中文标题模板 · HyperFrames</title>
+<style>
+  body { margin: 0; background: #0b0f1a; color: #fff; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .stage { width: 1920px; height: 1080px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .title { font-size: 120px; font-weight: 800; letter-spacing: 2px; }
+  .subtitle { margin-top: 32px; font-size: 48px; color: #9fb4ff; }
+  .tag { margin-top: 48px; padding: 12px 28px; border: 1px solid #3b82f6; border-radius: 999px; font-size: 32px; color: #dbeafe; }
+</style>
+</head>
+<body>
+  <!-- HyperFrames 示例：标题从 0 秒出现，持续 5 秒 -->
+  <div class="stage">
+    <div class="clip title" data-start="0" data-duration="5">你好，HyperFrames</div>
+    <div class="clip subtitle" data-start="0.5" data-duration="4.5">用 HTML 写视频的第一支中文模板</div>
+    <div class="clip tag" data-start="1" data-duration="4">Write HTML. Render video.</div>
+  </div>
+  <!--
+    使用说明（本 Fork 的中文示例）：
+    1. 本文件只是一个可直接改的起点模板，改标题、副标题文字即可换成你自己的版本。
+    2. 时间控制用 data-start / data-duration，动画请用可定位（seekable）的方式写，
+       避免依赖墙钟时间的动画，否则逐帧渲染时可能只剩静帧。
+    3. 渲染请参考上游文档 hyperframes.heygen.com，需要 Node.js 22+ 与 FFmpeg。
+  -->
+</body>
+</html>
