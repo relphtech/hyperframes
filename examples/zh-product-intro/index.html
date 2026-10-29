@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>中文产品介绍模板 · HyperFrames</title>
+<style>
+  body { margin: 0; background: #0b0f1a; color: #fff; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .stage { width: 1920px; height: 1080px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .title { font-size: 110px; font-weight: 800; letter-spacing: 2px; text-align: center; }
+  .subtitle { margin-top: 32px; font-size: 44px; color: #9fb4ff; text-align: center; }
+  .points { margin-top: 64px; display: flex; gap: 40px; }
+  .point { width: 480px; padding: 32px; border: 1px solid #3b82f6; border-radius: 24px; font-size: 36px; line-height: 1.5; text-align: center; }
+  .slogan { margin-top: 64px; padding: 16px 36px; border-radius: 999px; background: #2563eb; font-size: 40px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <!-- HyperFrames 示例：产品介绍从 0 秒出现，持续 8 秒 -->
+  <div class="stage">
+    <div class="clip title" data-start="0" data-duration="8">一支视频，讲清你的产品</div>
+    <div class="clip subtitle" data-start="0.5" data-duration="7.5">把三个卖点，按顺序说清楚</div>
+    <div class="clip points" data-start="1" data-duration="6">
+      <div class="point">卖点一：上手快，改文字就能用</div>
+      <div class="point">卖点二：画面稳，逐帧渲染不跳帧</div>
+      <div class="point">卖点三：可复用，换产品只换文案</div>
+    </div>
+    <div class="clip slogan" data-start="5" data-duration="3">写 HTML，出一支好视频。</div>
+  </div>
+  <!--
+    使用说明（本 Fork 的中文示例）：
+    1. 把标题、三个卖点和结尾口号换成你自己的产品文案，即可复用本模板。
+    2. 时间控制用 data-start / data-duration，动画请用可定位（seekable）的方式写，
+       避免依赖墙钟时间的动画，否则逐帧渲染时可能只剩静帧。
+    3. 渲染请参考上游文档 hyperframes.heygen.com，需要 Node.js 22+ 与 FFmpeg。
+  -->
+</body>
+</html>
