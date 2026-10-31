@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>中文字幕条模板 · HyperFrames</title>
+<style>
+  body { margin: 0; background: #0b0f1a; color: #fff; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .stage { width: 1920px; height: 1080px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .scene { font-size: 72px; font-weight: 800; letter-spacing: 2px; text-align: center; }
+  .scene-note { margin-top: 24px; font-size: 36px; color: #9fb4ff; text-align: center; }
+  .caption-bar { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); width: 1500px; padding: 28px 40px; border-radius: 20px; background: rgba(0, 0, 0, 0.72); border: 1px solid #3b82f6; font-size: 44px; line-height: 1.5; text-align: center; }
+  .caption-bar .keyword { color: #ffd166; font-weight: 700; }
+  .caption-top { position: absolute; left: 50%; top: 72px; transform: translateX(-50%); padding: 14px 32px; border-radius: 999px; background: #2563eb; font-size: 32px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <!-- HyperFrames 示例：字幕条从 1 秒出现，配合画面逐句切换，持续 12 秒 -->
+  <div class="stage">
+    <div class="clip caption-top" data-start="0" data-duration="12">中文字幕条 · Chinese Caption Bar</div>
+    <div class="clip scene" data-start="0" data-duration="12">画面留给视频，字幕留在底部</div>
+    <div class="clip scene-note" data-start="0.5" data-duration="11.5">换一句台词，只改字幕条里的文字和时间</div>
+    <div class="clip caption-bar" data-start="1" data-duration="4">第一句：<span class="keyword">用 HTML 写视频</span>，字幕不用再后期压字。</div>
+    <div class="clip caption-bar" data-start="5" data-duration="4">第二句：每句字幕都有自己的开始时间和持续时间。</div>
+    <div class="clip caption-bar" data-start="9" data-duration="3">第三句：改文字、改时间，重新渲染即可。</div>
+  </div>
+  <!--
+    使用说明（本 Fork 的中文示例）：
+    1. 字幕条固定在画面底部，半透明黑底加蓝边，换台词只需改 .caption-bar 里的文字。
+    2. 时间控制用 data-start / data-duration，逐句切换时让上一句结束时间等于下一句开始时间，避免两句重叠。
+    3. 动画请用可定位（seekable）的方式写，避免依赖墙钟时间的动画，否则逐帧渲染时可能只剩静帧。
+    4. 渲染请参考上游文档 hyperframes.heygen.com，需要 Node.js 22+ 与 FFmpeg。
+  -->
+</body>
+</html>
